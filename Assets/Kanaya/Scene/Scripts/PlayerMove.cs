@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField]
-    [Header("プレイヤー")]
-    GameObject _player;
-
+    /// <summary></summary>
 	[SerializeField]
     [Header("スピード")]
     float _speed = 3f;
 
-
+    /// <summary>X座標</summary>
 	float _moveX = 0f;
-	float _moveZ = 0f;
 
-	Rigidbody rb;
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    /// <summary>Y座標</summary>
+    float _moveZ = 0f;
+
+	Rigidbody _rb;
+    void Start() { _rb = GetComponent<Rigidbody>(); }
 
     // Update is called once per frame
     void Update()
@@ -31,9 +27,9 @@ public class PlayerMove : MonoBehaviour
         new Vector3(_moveX, 0, _moveZ);
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        rb.velocity = new Vector3(_moveX, 0, _moveZ);
+        _rb.velocity = new Vector3(_moveX, 0, _moveZ);
 
     }
 }
