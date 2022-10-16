@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    /// <summary></summary>
-	[SerializeField]
-    [Header("スピード")]
-    float _speed = 3f;
+    /// <summary>
+    /// マイナスポイント
+    /// </summary>
+    int _minusPoint;
 
     /// <summary>X座標</summary>
 	float _moveX = 0f;
@@ -15,10 +15,15 @@ public class PlayerMove : MonoBehaviour
     /// <summary>Y座標</summary>
     float _moveZ = 0f;
 
-	Rigidbody _rb;
-    void Start() { _rb = GetComponent<Rigidbody>(); }
+    /// <summary>スピード</summary>
+	[SerializeField]
+    [Header("スピード")]
+    float _speed = 3f;
 
-    // Update is called once per frame
+
+	Rigidbody _rb;
+    void Start() => _rb = GetComponent<Rigidbody>();
+
     void Update()
     {
         _moveX = Input.GetAxis("Horizontal") * _speed;
@@ -31,5 +36,26 @@ public class PlayerMove : MonoBehaviour
     {
         _rb.velocity = new Vector3(_moveX, 0, _moveZ);
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out ITree tree))
+        {
+            tree.TreeCut(other.gameObject);
+            SoundManager.Instance.PlaySFX(SFXType.Cut);
+        }
+        PlayerPrefs.SetInt("SCORE", ScoreManager.Instance.AllScorePoint);
+        PlayerPrefs.Save();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out IEnemy enemy))
+        {
+            enemy.GetMinusPoint(_minusPoint);
+            Destroy(collision.gameObject);
+            SoundManager.Instance.PlaySFX(SFXType.Death);
+        }
     }
 }

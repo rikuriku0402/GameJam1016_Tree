@@ -9,21 +9,13 @@ public class Player_Test : MonoBehaviour
     /// </summary>
     int _minusPoint;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent(out IEnemy enemy))
+        if (collision.gameObject.TryGetComponent(out IEnemy enemy))
         {
             enemy.GetMinusPoint(_minusPoint);
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
             SoundManager.Instance.PlaySFX(SFXType.Death);
         }
-
-        if (other.TryGetComponent(out ITree tree))
-        {
-            tree.TreeCut(other.gameObject);
-            SoundManager.Instance.PlaySFX(SFXType.Cut);
-        }
-        PlayerPrefs.SetInt("SCORE", ScoreManager.Instance.AllScorePoint);
-        PlayerPrefs.Save();
     }
 }
