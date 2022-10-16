@@ -16,5 +16,10 @@ public class Player_Test : MonoBehaviour
             enemy.GetMinusPoint(_minusPoint);
             Destroy(other.gameObject);
         }
+
+        if (other.TryGetComponent(out ITree tree))
+        {
+            tree.Break(other.gameObject);
+        }
     }
 }
