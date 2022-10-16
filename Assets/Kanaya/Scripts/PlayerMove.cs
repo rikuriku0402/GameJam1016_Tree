@@ -15,6 +15,10 @@ public class PlayerMove : MonoBehaviour
     /// <summary>Y座標</summary>
     float _moveZ = 0f;
 
+    Vector3 _mouse;
+
+    Vector3 _target;
+
     /// <summary>スピード</summary>
 	[SerializeField]
     [Header("スピード")]
@@ -30,6 +34,9 @@ public class PlayerMove : MonoBehaviour
         _moveZ = Input.GetAxis("Vertical") * _speed;
 
         new Vector3(_moveX, 0, _moveZ);
+
+        _mouse = Input.mousePosition;
+        _target = Camera.main.ScreenToWorldPoint(new Vector3(_mouse.x, _mouse.y, 10));
     }
 
     void FixedUpdate()
