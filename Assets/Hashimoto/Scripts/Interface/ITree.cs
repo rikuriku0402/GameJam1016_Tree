@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ITree
 {
-    void Break(GameObject obj);
+    void TreeCut(GameObject obj);
 }

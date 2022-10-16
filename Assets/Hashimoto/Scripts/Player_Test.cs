@@ -15,11 +15,13 @@ public class Player_Test : MonoBehaviour
         {
             enemy.GetMinusPoint(_minusPoint);
             Destroy(other.gameObject);
+            SoundManager.Instance.PlaySFX(SFXType.Death);
         }
 
         if (other.TryGetComponent(out ITree tree))
         {
-            tree.Break(other.gameObject);
+            tree.TreeCut(other.gameObject);
+            SoundManager.Instance.PlaySFX(SFXType.Cut);
         }
     }
 }
