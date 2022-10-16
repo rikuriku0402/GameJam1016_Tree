@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    /// <summary>移動スピード</summary>
+    /// <summary></summary>
 	[SerializeField]
-    [Header("移動スピード")]
+    [Header("スピード")]
     float _speed = 3f;
 
     /// <summary>X座標</summary>

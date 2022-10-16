@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 1180658113}
   - component: {fileID: 1180658112}
   - component: {fileID: 1180658111}
-  - component: {fileID: 1180658117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -253,7 +252,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1180658112
 MonoBehaviour:
@@ -267,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5784f8a930ce2b64990702b205f4b9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   _speed: 5
 --- !u!65 &1180658113
 BoxCollider:
@@ -346,19 +346,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1180658117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180658110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc4ce3f14a7562849b444177386cb8bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotateSpeed: 3
 --- !u!1 &1542832909
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +357,6 @@ GameObject:
   - component: {fileID: 1542832912}
   - component: {fileID: 1542832911}
   - component: {fileID: 1542832910}
-  - component: {fileID: 1542832913}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -436,28 +422,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542832909}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -8}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1542832913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542832909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a122d688bd7e64db20c534f208a58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1180658110}
-  _offSet: {x: 0, y: 3, z: 5}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2005504847
 GameObject:
   m_ObjectHideFlags: 0
