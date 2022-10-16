@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Hashimoto/Scene/Hashimoto_Test.unity
-    guid: cef3d8d181841bd418596e34a3f564b2
+    path: Assets/Kanaya/Scene/TitleScene.unity
+    guid: 21e9274dd0d9a1e4bab28b7c33d01571
+  - enabled: 1
+    path: Assets/RPGPP_LT/Scene/GameScene.unity
+    guid: d2809ab9b90eea7419d8d90d4c505d35
   - enabled: 1
     path: Assets/Hashimoto/Scene/ResultScene.unity
     guid: 31a3b86434f64dc4c88c2a98b79a05d5
