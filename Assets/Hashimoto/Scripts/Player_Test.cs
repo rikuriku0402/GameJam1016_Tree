@@ -23,5 +23,7 @@ public class Player_Test : MonoBehaviour
             tree.TreeCut(other.gameObject);
             SoundManager.Instance.PlaySFX(SFXType.Cut);
         }
+        PlayerPrefs.SetInt("SCORE", ScoreManager.Instance.AllScorePoint);
+        PlayerPrefs.Save();
     }
 }

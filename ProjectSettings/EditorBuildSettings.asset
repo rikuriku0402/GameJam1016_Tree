@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Hashimoto/Scene/Hashimoto_Test.unity
+    guid: cef3d8d181841bd418596e34a3f564b2
+  - enabled: 1
+    path: Assets/Hashimoto/Scene/ResultScene.unity
+    guid: 31a3b86434f64dc4c88c2a98b79a05d5
   m_configObjects: {}
