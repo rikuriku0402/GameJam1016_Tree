@@ -11,6 +11,6 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
     /// </summary>
     int _allScore;
 
-    public int AllScore(int score) => _allScore = score;
+    public int AllScore(int score) => _allScore += score;
 
 }
