@@ -11,3 +11,6 @@
 ゲーム制作専攻21A
 橋本りく
 金谷しょう
+
+# YouTube
+https://www.youtube.com/watch?v=u0tMnBAzPQQ
